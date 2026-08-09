@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Codexa Web Solutions – Code · Design · Grow</title>
+  <meta name="description" content="Learn about Codexa Web Solutions – our story, mission, vision, team skills, and the passion behind every project we build." />
+  <meta name="keywords" content="about Codexa, web agency India, digital agency team, frontend developer India, Spring Boot developer" />
+  <link rel="canonical" href="https://codexawebsolutions.com/about.html" />
+  <meta property="og:title" content="About Codexa Web Solutions" />
+  <meta property="og:description" content="Our story, mission, vision, and the team behind every world-class project." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codexawebsolutions.com/about.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"AboutPage","name":"About Codexa Web Solutions","url":"https://codexawebsolutions.com/about.html","description":"Learn about Codexa Web Solutions – our story, mission, and team."}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <style>
+    :root {
+      --blue: #4361EE; --purple: #7B2FBE; --cyan: #00D4FF; --magenta: #C77DFF;
+      --dark: #030712; --dark2: #0a0f1e; --dark3: #0d1224;
+      --glass: rgba(255,255,255,0.04); --glass-border: rgba(255,255,255,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Space Grotesk', sans-serif; background: var(--dark); color: #e2e8f0; overflow-x: hidden;  }
+/* Preloader */
+    #preloader { position:fixed; inset:0; background:var(--dark); z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2rem; }
+    .preloader-logo { font-family:'Orbitron',monospace; font-size:clamp(2rem,5vw,3.5rem); font-weight:800; background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple),var(--magenta)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .preloader-bar-wrap { width:min(340px,80vw); height:3px; background:rgba(255,255,255,0.08); border-radius:99px; overflow:hidden; }
+    .preloader-bar { height:100%; width:0%; background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple)); border-radius:99px; box-shadow:0 0 12px var(--cyan); transition:width 0.05s linear; }
+    .preloader-percent { font-family:'Orbitron',monospace; font-size:0.85rem; color:rgba(0,212,255,0.6); }
+    /* Nav */
+    #navbar { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1.25rem 2rem; transition:all 0.4s ease; }
+    #navbar.scrolled { background:rgba(3,7,18,0.85); backdrop-filter:blur(24px); border-bottom:1px solid var(--glass-border); padding:0.85rem 2rem; box-shadow:0 4px 40px rgba(0,0,0,0.4); }
+    .nav-inner { max-width:1400px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; }
+    .nav-logo { font-family:'Orbitron',monospace; font-size:1.4rem; font-weight:800; background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+    .nav-logo-icon { width:36px; height:36px; background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple)); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.85rem; color:white; box-shadow:0 0 16px rgba(67,97,238,0.5); }
+    .nav-links { display:flex; align-items:center; gap:0.25rem; }
+    .nav-link { font-size:0.9rem; font-weight:500; color:rgba(226,232,240,0.75); text-decoration:none; padding:0.5rem 0.85rem; border-radius:8px; transition:all 0.3s ease; position:relative; overflow:hidden; }
+    .nav-link::after { content:''; position:absolute; bottom:6px; left:50%; transform:translateX(-50%); width:0; height:2px; background:linear-gradient(90deg,var(--cyan),var(--blue)); border-radius:99px; transition:width 0.3s ease; }
+    .nav-link:hover { color:var(--cyan); }
+    .nav-link:hover::after, .nav-link.active::after { width:70%; }
+    .nav-link.active { color:var(--cyan); }
+    .nav-cta { background:linear-gradient(135deg,var(--blue),var(--purple)); color:white !important; padding:0.55rem 1.35rem !important; border-radius:8px; font-weight:600 !important; box-shadow:0 0 20px rgba(67,97,238,0.35); }
+    .nav-cta:hover { box-shadow:0 0 32px rgba(67,97,238,0.65) !important; transform:translateY(-1px); }
+    .nav-cta::after { display:none !important; }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+    .hamburger span { display:block; width:26px; height:2px; background:var(--cyan); border-radius:99px; transition:all 0.3s ease; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    #mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(3,7,18,0.97); backdrop-filter:blur(24px); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:1.5rem; }
+    #mobile-menu.open { display:flex; }
+    .mobile-link { font-family:'Orbitron',monospace; font-size:1.5rem; font-weight:600; color:rgba(226,232,240,0.8); text-decoration:none; transition:all 0.3s ease; }
+    .mobile-link:hover { color:var(--cyan); }
+    .mobile-close { position:absolute; top:1.5rem; right:2rem; font-size:1.8rem; color:var(--cyan); cursor:pointer; background:none; border:none; }
+    /* Page header */
+    .page-header { padding:10rem 2rem 5rem; background:linear-gradient(135deg,var(--dark),var(--dark2)); text-align:center; position:relative; overflow:hidden; }
+    .page-header-title { font-family:'Orbitron',monospace; font-size:clamp(2.5rem,6vw,4rem); font-weight:800; color:#f1f5f9; margin-bottom:1rem; }
+    .page-header-title span { background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .page-header-sub { font-size:1.1rem; color:rgba(226,232,240,0.55); max-width:600px; margin:0 auto; }
+    /* Section */
+    .section { padding:6rem 2rem; position:relative; overflow:hidden; }
+    .section-inner { max-width:1400px; margin:0 auto; }
+    .section-badge { display:inline-flex; align-items:center; gap:0.5rem; background:rgba(67,97,238,0.1); border:1px solid rgba(67,97,238,0.25); border-radius:99px; padding:0.35rem 1rem; font-size:0.78rem; font-weight:600; color:var(--cyan); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.25rem; }
+    .section-title { font-family:'Orbitron',monospace; font-size:clamp(2rem,4vw,3rem); font-weight:700; line-height:1.15; color:#f1f5f9; margin-bottom:1rem; }
+    .section-title span { background:linear-gradient(135deg,var(--cyan),var(--blue),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .section-subtitle { font-size:1.05rem; color:rgba(226,232,240,0.6); line-height:1.7; }
+    /* Glass card */
+    .glass-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:24px; padding:2.5rem; }
+    /* Mission Vision */
+    .mv-grid { display:grid; grid-template-columns:1fr 1fr; gap:2rem; }
+    .mv-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:24px; padding:2.5rem; position:relative; overflow:hidden; transition:all 0.4s ease; }
+    .mv-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; transition:opacity 0.4s; }
+    .mv-card.mission::before { background:linear-gradient(90deg,var(--blue),var(--cyan)); opacity:1; }
+    .mv-card.vision::before { background:linear-gradient(90deg,var(--purple),var(--magenta)); opacity:1; }
+    .mv-icon { font-size:2.5rem; margin-bottom:1.25rem; }
+    .mv-card h3 { font-family:'Orbitron',monospace; font-size:1.3rem; font-weight:700; color:#f1f5f9; margin-bottom:1rem; }
+    .mv-card p { font-size:0.95rem; color:rgba(226,232,240,0.65); line-height:1.75; }
+    /* Skills */
+    .skill-bar-wrap { margin-bottom:1.5rem; }
+    .skill-bar-label { display:flex; justify-content:space-between; margin-bottom:0.5rem; font-size:0.9rem; font-weight:500; color:#e2e8f0; }
+    .skill-bar-label span:last-child { color:var(--cyan); }
+    .skill-bar-bg { height:7px; background:rgba(255,255,255,0.07); border-radius:99px; overflow:hidden; }
+    .skill-bar-fill { height:100%; border-radius:99px; background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple)); box-shadow:0 0 12px rgba(67,97,238,0.5); width:0; transition:width 1.5s cubic-bezier(0.4,0,0.2,1); }
+    /* Team card */
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; margin-top:3rem; }
+    .team-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:24px; padding:2.5rem; text-align:center; transition:all 0.4s ease; }
+    .team-card:hover { transform:translateY(-8px); border-color:rgba(67,97,238,0.35); box-shadow:0 24px 60px rgba(0,0,0,0.4); }
+    .team-avatar { width:90px; height:90px; border-radius:50%; background:linear-gradient(135deg,var(--blue),var(--purple)); display:flex; align-items:center; justify-content:center; font-size:2rem; color:white; font-weight:700; margin:0 auto 1.25rem; box-shadow:0 0 30px rgba(67,97,238,0.4); }
+    .team-card h3 { font-size:1.1rem; font-weight:600; color:#f1f5f9; margin-bottom:0.4rem; }
+    .team-card p { font-size:0.85rem; color:var(--cyan); margin-bottom:0.75rem; }
+    .team-card .bio { font-size:0.82rem; color:rgba(226,232,240,0.5); line-height:1.6; }
+    /* Stats */
+    .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+    .stat-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:20px; padding:2rem; text-align:center; transition:all 0.3s; }
+    .stat-card:hover { border-color:rgba(67,97,238,0.35); transform:translateY(-4px); }
+    .stat-number { font-family:'Orbitron',monospace; font-size:clamp(2rem,4vw,2.8rem); font-weight:800; background:linear-gradient(135deg,var(--cyan),var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .stat-label { font-size:0.85rem; color:rgba(226,232,240,0.55); margin-top:0.35rem; }
+    /* Values */
+    .values-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; margin-top:3rem; }
+    .value-card { background:var(--glass); border:1px solid var(--glass-border); border-radius:20px; padding:2rem; text-align:center; transition:all 0.3s; }
+    .value-card:hover { transform:translateY(-6px); border-color:rgba(67,97,238,0.35); }
+    .value-icon { font-size:2rem; margin-bottom:1rem; }
+    .value-card h4 { font-size:0.95rem; font-weight:600; color:#f1f5f9; margin-bottom:0.5rem; }
+    .value-card p { font-size:0.82rem; color:rgba(226,232,240,0.55); line-height:1.55; }
+    /* Aurora */
+    .aurora-bg { position:absolute; inset:0; overflow:hidden; z-index:0; }
+    .aurora-orb { position:absolute; border-radius:50%; filter:blur(80px); animation:float-orb 8s ease-in-out infinite; opacity:0.25; }
+    .aurora-orb-1 { width:500px; height:500px; background:radial-gradient(circle,var(--blue),transparent); top:-150px; right:-150px; }
+    .aurora-orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--purple),transparent); bottom:-150px; left:-100px; animation-delay:-4s; }
+    .grid-bg { position:absolute; inset:0; z-index:0; background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px); background-size:60px 60px; }
+    /* Buttons */
+    .btn-primary { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,var(--blue),var(--purple)); color:white; padding:0.85rem 2rem; border-radius:12px; font-weight:600; font-size:0.95rem; text-decoration:none; transition:all 0.3s ease; box-shadow:0 0 24px rgba(67,97,238,0.4); border:none; cursor:pointer; }
+    .btn-primary:hover { transform:translateY(-3px); box-shadow:0 0 40px rgba(67,97,238,0.65); }
+    .btn-secondary { display:inline-flex; align-items:center; gap:0.5rem; background:transparent; color:var(--cyan); padding:0.85rem 2rem; border-radius:12px; font-weight:600; font-size:0.95rem; text-decoration:none; transition:all 0.3s ease; border:1.5px solid rgba(0,212,255,0.4); }
+    .btn-secondary:hover { background:rgba(0,212,255,0.08); border-color:var(--cyan); transform:translateY(-3px); }
+    /* Tech badges */
+    .tech-badges { display:flex; flex-wrap:wrap; gap:0.75rem; }
+    .tech-badge { display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:rgba(67,97,238,0.1); border:1px solid rgba(67,97,238,0.25); border-radius:99px; font-size:0.85rem; color:#e2e8f0; font-weight:500; transition:all 0.3s; }
+    .tech-badge:hover { background:rgba(67,97,238,0.2); border-color:rgba(67,97,238,0.5); color:var(--cyan); }
+    /* Footer */
+    footer { background:var(--dark2); border-top:1px solid var(--glass-border); padding:4rem 2rem 2rem; }
+    .footer-inner { max-width:1400px; margin:0 auto; }
+    .footer-top { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem; }
+    .footer-brand p { font-size:0.88rem; color:rgba(226,232,240,0.5); line-height:1.7; margin-top:1rem; max-width:280px; }
+    .footer-tagline { font-size:0.75rem; letter-spacing:0.2em; color:rgba(0,212,255,0.6); text-transform:uppercase; margin-top:0.5rem; }
+    .footer-col h4 { font-family:'Orbitron',monospace; font-size:0.82rem; font-weight:600; color:rgba(226,232,240,0.6); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.25rem; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:0.65rem; }
+    .footer-col ul li a { font-size:0.88rem; color:rgba(226,232,240,0.5); text-decoration:none; transition:color 0.3s; }
+    .footer-col ul li a:hover { color:var(--cyan); }
+    .footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; padding-top:2rem; border-top:1px solid var(--glass-border); }
+    .footer-bottom p { font-size:0.82rem; color:rgba(226,232,240,0.35); }
+    .footer-socials { display:flex; gap:0.75rem; }
+    .social-btn { width:36px; height:36px; background:var(--glass); border:1px solid var(--glass-border); border-radius:8px; display:flex; align-items:center; justify-content:center; color:rgba(226,232,240,0.5); font-size:0.9rem; text-decoration:none; transition:all 0.3s; }
+    .social-btn:hover { background:rgba(67,97,238,0.15); border-color:rgba(67,97,238,0.4); color:var(--cyan); transform:translateY(-2px); }
+    @keyframes float-orb { 0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);} }
+    @media(max-width:1024px){ .footer-top{grid-template-columns:1fr 1fr;} .stats-row{grid-template-columns:repeat(2,1fr);} .mv-grid{grid-template-columns:1fr;} .story-grid{grid-template-columns:1fr!important;} .skills-grid{grid-template-columns:1fr!important;} }
+    @media(max-width:768px){ .nav-links{display:none;} .hamburger{display:flex;} .stats-row{grid-template-columns:1fr 1fr;} .footer-top{grid-template-columns:1fr;} }
+    @media(max-width:480px){ .stats-row{grid-template-columns:1fr;} .section{padding:4rem 1.25rem;} }
+  
+/* CODEXA FUTURISTIC LOADER */
+
+.loader-logo-wrap:before,.loader-logo-wrap:after{content:'';position:absolute;inset:-10px;border:1px solid rgba(0,212,255,.28);border-radius:50%;animation:loaderOrbit 4s linear infinite;}
+.loader-logo-wrap:after{inset:-24px;border-color:rgba(199,125,255,.18);animation-duration:7s;animation-direction:reverse;}
+
+.preloader-code{font-family:'Orbitron',monospace;display:flex;gap:.6rem;align-items:center;justify-content:center;letter-spacing:.18em;color:rgba(226,232,240,.75);font-size:.72rem;}
+.preloader-code span{animation:loaderTextGlow 1.8s ease-in-out infinite;}
+.preloader-code span:nth-child(3){animation-delay:.25s}.preloader-code span:nth-child(5){animation-delay:.5s}
+.preloader-code i{font-style:normal;color:var(--cyan);opacity:.6;}
+.loader-orbit{width:190px;height:18px;position:relative;display:flex;justify-content:space-between;align-items:center;opacity:.75;}
+.loader-orbit span{width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:loaderDot 1.2s infinite ease-in-out;}
+.loader-orbit span:nth-child(2){animation-delay:.18s;background:var(--blue);box-shadow:0 0 12px var(--blue)}.loader-orbit span:nth-child(3){animation-delay:.36s;background:var(--magenta);box-shadow:0 0 12px var(--magenta)}
+#preloader.loader-hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .7s ease,visibility .7s ease;}
+@keyframes loaderGrow{0%,100%{transform:scale(.9) rotate(0deg)}50%{transform:scale(1.08) rotate(2deg)}}
+@keyframes loaderOrbit{to{transform:rotate(360deg)}}
+@keyframes loaderTextGlow{0%,100%{opacity:.45;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px);text-shadow:0 0 14px rgba(0,212,255,.55)}}
+@keyframes loaderDot{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-7px);opacity:1}}
+
+
+/* ===== CODEXA BRAND IMAGE / RESPONSIVE POLISH ===== */
+.nav-logo-image{width:38px;height:38px;object-fit:contain;display:block;filter:drop-shadow(0 0 14px rgba(0,212,255,.45));transition:transform .35s ease,filter .35s ease;}
+.nav-logo:hover .nav-logo-image{transform:rotate(-5deg) scale(1.06);filter:drop-shadow(0 0 20px rgba(0,212,255,.7));}
+.nav-logo span{display:inline-block;}
+@media(max-width:768px){#navbar{padding:.9rem 1rem}.nav-inner{width:100%}.nav-logo{font-size:1.05rem;gap:.45rem}.nav-logo-image{width:34px;height:34px}.section{padding:4.5rem 1rem}.section-inner{width:100%;}.footer-bottom{justify-content:center;text-align:center;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;}}
+
+
+@keyframes filterIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+/* ===== CODEXA EXPERIENCE LAYER ===== */
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{transition:background .35s ease,color .35s ease}
+/* Theme system */
+body.light-theme{--dark:#f5f8ff;--dark2:#edf2ff;--dark3:#e6ecfa;--glass:rgba(255,255,255,.72);--glass-border:rgba(15,23,42,.10);color:#172033;background:#f5f8ff}
+body.light-theme #navbar.scrolled{background:rgba(245,248,255,.82);box-shadow:0 4px 35px rgba(15,23,42,.10)}
+body.light-theme .nav-link{color:rgba(15,23,42,.72)}
+body.light-theme .nav-link:hover,body.light-theme .nav-link.active{color:#2563eb}
+body.light-theme #mobile-menu{background:rgba(245,248,255,.97)}
+body.light-theme .mobile-link{color:rgba(15,23,42,.82)}
+body.light-theme .mobile-link:hover{color:#2563eb}
+body.light-theme .section-title,body.light-theme .hero-title-pro,body.light-theme h1,body.light-theme h2,body.light-theme h3,body.light-theme h4{color:#101828}
+body.light-theme p,body.light-theme .section-subtitle,body.light-theme .hero-subtitle-pro{color:rgba(15,23,42,.68)}
+body.light-theme footer{background:#e8eefb!important;color:#172033}
+body.light-theme .footer-col a,body.light-theme .footer-brand p{color:rgba(15,23,42,.62)}
+body.light-theme .service-card,body.light-theme .project-card,body.light-theme .why-card,body.light-theme .stat-card,body.light-theme .contact-form-card,body.light-theme .contact-info-card{background:rgba(255,255,255,.72);border-color:rgba(15,23,42,.10)}
+body.light-theme .form-input{background:rgba(255,255,255,.8);color:#172033;border-color:rgba(15,23,42,.13)}
+body.light-theme .form-input::placeholder{color:rgba(15,23,42,.38)}
+body.light-theme .faq-question{color:#172033}
+body.light-theme #hero{background:radial-gradient(circle at 72% 46%,rgba(37,99,235,.12),transparent 30%),linear-gradient(135deg,#f7faff 0%,#eaf1ff 55%,#f5edff 100%)}
+body.light-theme .hero-grid{background-image:linear-gradient(rgba(15,23,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.05) 1px,transparent 1px)}
+body.light-theme .hero-core{background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.95),rgba(67,97,238,.12) 34%,rgba(255,255,255,.25) 65%)}
+body.light-theme .hero-terminal{background:rgba(255,255,255,.72);border-color:rgba(37,99,235,.16);box-shadow:0 20px 60px rgba(15,23,42,.10)}
+.theme-toggle{width:40px;height:40px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--cyan);display:inline-grid;place-items:center;cursor:pointer;transition:transform .3s ease,background .3s ease,border-color .3s ease;flex:0 0 auto}
+.theme-toggle:hover{transform:translateY(-2px) rotate(8deg);background:rgba(0,212,255,.10);border-color:rgba(0,212,255,.30)}
+body.light-theme .theme-toggle{border-color:rgba(15,23,42,.10);background:rgba(255,255,255,.65);color:#2563eb}
+.scroll-top{position:fixed;right:20px;bottom:22px;width:46px;height:46px;border:1px solid rgba(0,212,255,.25);border-radius:14px;background:rgba(5,10,25,.72);backdrop-filter:blur(14px);color:var(--cyan);display:grid;place-items:center;cursor:pointer;z-index:900;opacity:0;visibility:hidden;transform:translateY(15px);transition:all .35s ease;box-shadow:0 10px 35px rgba(0,0,0,.25)}
+.scroll-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-top:hover{transform:translateY(-4px);box-shadow:0 0 28px rgba(0,212,255,.25)}
+body.light-theme .scroll-top{background:rgba(255,255,255,.78);border-color:rgba(37,99,235,.20);color:#2563eb}
+/* CSS/Intersection Observer reveal */
+[data-reveal]{opacity:0;transform:translate3d(0,28px,0);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+[data-reveal="left"]{transform:translate3d(-28px,0,0)}
+[data-reveal="right"]{transform:translate3d(28px,0,0)}
+[data-reveal="scale"]{transform:scale(.96)}
+[data-reveal].is-visible{opacity:1;transform:none}
+@media(max-width:768px){.theme-toggle{width:38px;height:38px}.scroll-top{right:14px;bottom:16px}.hero-content-pro{grid-template-columns:1fr;gap:1.5rem;padding:7.5rem 1rem 4.5rem}.hero-visual-pro{min-height:430px}.hero-terminal{right:0;top:0;transform:scale(.86) rotate(2deg)}.hero-core{width:190px;height:190px}.ring-a{width:280px;height:280px}.ring-b{width:360px;height:360px}.hero-core-logo{width:100px;height:100px}}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}}
+
+</style>
+</head>
+<body>
+<div id="preloader">
+  <div class="preloader-code"><span>CODE</span><i>·</i><span>DESIGN</span><i>·</i><span>GROW</span></div>
+  <div class="loader-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="preloader-bar-wrap"><div class="preloader-bar" id="preloader-bar"></div></div>
+  <div class="preloader-percent" id="preloader-percent">0%</div>
+</div>
+<div id="mobile-menu">
+  <button class="mobile-close" id="mobile-close"><i class="fa-solid fa-xmark"></i></button>
+  <a href="index.html" class="mobile-link">Home</a>
+  <a href="about.html" class="mobile-link">About</a>
+  <a href="services.html" class="mobile-link">Services</a>
+  <a href="projects.html" class="mobile-link">Projects</a>
+  <a href="contact.html" class="mobile-link">Contact</a>
+</div>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="codexa-logo.png" alt="Codexa" class="nav-logo-image" loading="eager"><span>CODEXA</span></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link nav-cta">Let's Talk</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode"><i class="fa-solid fa-moon"></i></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main>
+<!-- Page Header -->
+<section class="page-header">
+  <div class="aurora-bg"><div class="aurora-orb aurora-orb-1"></div><div class="aurora-orb aurora-orb-2"></div></div>
+  <div class="grid-bg"></div>
+  <div style="position:relative;z-index:1;">
+    <div class="section-badge" style="justify-content:center;" data-aos="fade-down">👋 Get to Know Us</div>
+    <h1 class="page-header-title" data-aos="fade-up">About <span>Codexa</span></h1>
+    <p class="page-header-sub" data-aos="fade-up" data-aos-delay="100">We are a passionate team of developers, designers, and strategists dedicated to crafting digital experiences that make a difference.</p>
+  </div>
+</section>
+
+<!-- Company Story -->
+<section class="section" style="background:var(--dark2);">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="story-grid">
+      <div data-aos="fade-right">
+        <div class="section-badge">📖 Our Story</div>
+        <h2 class="section-title">From Passion to <span>Purpose</span></h2>
+        <p class="section-subtitle" style="margin-bottom:1.5rem;">Codexa Web Solutions was founded with a simple but powerful belief: <strong style="color:#f1f5f9;">great technology should be accessible to every business</strong>.</p>
+        <p style="font-size:0.95rem;color:rgba(226,232,240,0.6);line-height:1.8;margin-bottom:1.5rem;">What started as a freelance journey quickly evolved into a full-service digital agency. We've worked with startups, SMEs, and enterprises across India, helping them build robust online presences that convert visitors into loyal customers.</p>
+        <p style="font-size:0.95rem;color:rgba(226,232,240,0.6);line-height:1.8;margin-bottom:2rem;">Today, Codexa stands for three things: precision in code, artistry in design, and strategy in growth. Every project we take on is treated with the same dedication and passion as if it were our own.</p>
+        <div class="tech-badges">
+          <span class="tech-badge"><i class="fa-brands fa-html5" style="color:#e34f26;"></i> HTML5</span>
+          <span class="tech-badge"><i class="fa-brands fa-css3-alt" style="color:#1572b6;"></i> CSS3</span>
+          <span class="tech-badge"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</span>
+          <span class="tech-badge"><i class="fa-brands fa-java" style="color:#007396;"></i> Spring Boot</span>
+          <span class="tech-badge"><i class="fa-solid fa-magnifying-glass" style="color:#00D4FF;"></i> SEO</span>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card" style="position:relative;">
+          <div style="position:absolute;top:-20px;right:-20px;width:80px;height:80px;background:linear-gradient(135deg,var(--blue),var(--purple));border-radius:50%;opacity:0.3;filter:blur(20px);"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+            <div style="text-align:center;">
+              <div style="font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">50+</div>
+              <div style="font-size:0.82rem;color:rgba(226,232,240,0.5);margin-top:0.25rem;">Projects</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:'Orbitron',monospace;font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--purple),var(--magenta));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">40+</div>
+              <div style="font-size:0.82rem;color:rgba(226,232,240,0.5);margin-top:0.25rem;">Clients</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--glass-border);padding-top:1.5rem;">
+            <div style="font-size:0.85rem;color:rgba(226,232,240,0.5);line-height:1.8;">
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;"><span style="color:var(--cyan);">▹</span> Full-stack Web Development</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;"><span style="color:var(--cyan);">▹</span> Enterprise Java / Spring Boot APIs</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;"><span style="color:var(--cyan);">▹</span> Search Engine Optimization</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;"><span style="color:var(--cyan);">▹</span> UI/UX & Motion Design</div>
+              <div style="display:flex;align-items:center;gap:0.75rem;"><span style="color:var(--cyan);">▹</span> Video Production & Content</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section" style="background:var(--dark);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-badge" data-aos="fade-down">🎯 Our Direction</div>
+      <h2 class="section-title" data-aos="fade-up">Mission & <span>Vision</span></h2>
+    </div>
+    <div class="mv-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="mv-card mission">
+        <div class="mv-icon">🚀</div>
+        <h3>Our Mission</h3>
+        <p>To empower businesses of all sizes with cutting-edge digital solutions that are not only visually stunning but technically superior and commercially effective. We combine innovation with strategic thinking to deliver websites, applications, and digital campaigns that drive real, measurable results.</p>
+        <br/>
+        <p>We believe that every business deserves a premium online presence — and we're here to make that possible, one project at a time.</p>
+      </div>
+      <div class="mv-card vision">
+        <div class="mv-icon">🌟</div>
+        <h3>Our Vision</h3>
+        <p>To be recognized as India's most trusted and innovative digital agency, known for delivering world-class digital experiences that transform businesses and create lasting impact in the global market.</p>
+        <br/>
+        <p>We envision a future where Codexa Web Solutions is synonymous with digital excellence — where our work sets the standard for creativity, performance, and business growth across industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills & Technologies -->
+<section class="section" style="background:var(--dark2);">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;" class="skills-grid">
+      <div data-aos="fade-right">
+        <div class="section-badge">💻 Expertise</div>
+        <h2 class="section-title">Skills & <span>Technologies</span></h2>
+        <p class="section-subtitle" style="margin-bottom:2.5rem;">Our technical arsenal spans frontend artistry, backend engineering, and digital growth strategies.</p>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>HTML5 & CSS3</span><span>95%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>JavaScript (ES6+)</span><span>90%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Tailwind CSS</span><span>92%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Spring Boot / Java</span><span>85%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="85"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>SEO & Content Strategy</span><span>88%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Video Editing</span><span>82%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="82"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>CSS & Motion Design</span><span>87%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="87"></div></div>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Content Writing</span><span>86%</span></div>
+          <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="86"></div></div>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card">
+          <h3 style="font-family:'Orbitron',monospace;font-size:1rem;font-weight:600;color:#f1f5f9;margin-bottom:2rem;">Technology Stack</h3>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-brands fa-html5" style="font-size:1.8rem;color:#e34f26;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">HTML5</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-brands fa-css3-alt" style="font-size:1.8rem;color:#1572b6;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">CSS3</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-brands fa-js" style="font-size:1.8rem;color:#f7df1e;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">JavaScript</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-solid fa-wind" style="font-size:1.8rem;color:#38bdf8;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">Tailwind</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-brands fa-java" style="font-size:1.8rem;color:#007396;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">Spring Boot</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-solid fa-magnifying-glass-chart" style="font-size:1.8rem;color:#00D4FF;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">SEO</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-solid fa-pen-nib" style="font-size:1.8rem;color:#C77DFF;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">Content</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-solid fa-film" style="font-size:1.8rem;color:#7B2FBE;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">Video Edit</span>
+            </div>
+            <div style="text-align:center;padding:1rem;background:rgba(67,97,238,0.08);border:1px solid rgba(67,97,238,0.15);border-radius:14px;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(67,97,238,0.4)'" onmouseleave="this.style.borderColor='rgba(67,97,238,0.15)'">
+              <i class="fa-brands fa-git-alt" style="font-size:1.8rem;color:#f05032;display:block;margin-bottom:0.5rem;"></i>
+              <span style="font-size:0.72rem;color:rgba(226,232,240,0.55);">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section" style="background:var(--dark);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-badge" data-aos="fade-down">📊 By the Numbers</div>
+      <h2 class="section-title" data-aos="fade-up">Our <span>Achievements</span></h2>
+    </div>
+    <div class="stats-row" data-aos="fade-up" data-aos-delay="100">
+      <div class="stat-card">
+        <div class="stat-number" data-count="50">0+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="40">0+</div>
+        <div class="stat-label">Clients Served</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="35">0+</div>
+        <div class="stat-label">5-Star Reviews</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-count="2">0+</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values -->
+<section class="section" style="background:var(--dark2);">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <div class="section-badge" data-aos="fade-down">💎 Core Values</div>
+      <h2 class="section-title" data-aos="fade-up">What Drives <span>Us</span></h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" data-aos="fade-up" data-aos-delay="50"><div class="value-icon">⚡</div><h4>Innovation</h4><p>We embrace the latest technologies and design trends to deliver forward-thinking solutions.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="150"><div class="value-icon">🎯</div><h4>Precision</h4><p>Every line of code, every pixel, every word is crafted with meticulous attention to detail.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="250"><div class="value-icon">🤝</div><h4>Partnership</h4><p>We build long-term relationships with our clients, becoming true partners in their growth.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="350"><div class="value-icon">🚀</div><h4>Performance</h4><p>Speed, scalability, and efficiency are non-negotiable in everything we build.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="450"><div class="value-icon">🔍</div><h4>Transparency</h4><p>Clear communication, honest timelines, and zero hidden surprises throughout every project.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="550"><div class="value-icon">🌱</div><h4>Growth</h4><p>We are committed to continuous learning and helping our clients grow beyond expectations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:linear-gradient(135deg,rgba(67,97,238,0.12),rgba(123,47,190,0.12));border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border);">
+  <div class="section-inner" style="text-align:center;">
+    <div data-aos="zoom-in">
+      <div class="section-badge" style="justify-content:center;">🎯 Work With Us</div>
+      <h2 class="section-title" style="max-width:600px;margin:1rem auto;">Ready to <span>Start</span> Your Project?</h2>
+      <p style="font-size:1rem;color:rgba(226,232,240,0.6);margin-bottom:2.5rem;">Let's create something extraordinary together. Reach out today for a free consultation.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
+        <a href="services.html" class="btn-secondary"><i class="fa-solid fa-list"></i> Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<button class="scroll-top" id="scroll-top" type="button" aria-label="Back to top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-wordmark">CODEXA</a>
+        <div class="footer-tagline">CODE · DESIGN · GROW</div>
+        <p>We build premium digital experiences that transform businesses.</p>
+        <div class="footer-socials" style="margin-top:1.5rem;">
+          <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Pages</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Frontend Dev</a></li><li><a href="services.html">Spring Boot</a></li><li><a href="services.html">SEO</a></li><li><a href="services.html">Video Editing</a></li><li><a href="services.html">Content Writing</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:aryansahu0010@gmail.com">aryansahu0010@gmail.com</a></li><li><a href="tel:+919179020671">+91 9179020671</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Codexa Web Solutions. All rights reserved.</p><p>Crafted with <span style="color:#f87171;">♥</span> by Aryan Sahu</p></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+ const bar=document.getElementById('preloader-bar'),pct=document.getElementById('preloader-percent'),pre=document.getElementById('preloader');
+ let p=0; const timer=setInterval(()=>{p=Math.min(100,p+Math.random()*18);if(bar)bar.style.width=p+'%';if(pct)pct.textContent=Math.round(p)+'%';if(p>=100){clearInterval(timer);setTimeout(()=>pre&&pre.classList.add('loader-hide'),350)}},55);
+ 
+ if(window.AOS) AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+ document.querySelectorAll('.skill-bar-fill').forEach(bar=>{const w=bar.dataset.width;bar.style.width='0%';if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){bar.style.width=w+'%';bar.style.transition='width 1.5s cubic-bezier(.2,.8,.2,1)';io.unobserve(bar)}}),{threshold:.5});io.observe(bar)}else bar.style.width=w+'%'});
+
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+(function(){
+  if(window.AOS) AOS.init({duration:750,easing:'ease-out-cubic',once:true,offset:60});
+  const body=document.body, saved=localStorage.getItem('codexa-theme');
+  if(saved==='light') body.classList.add('light-theme');
+  const theme=document.getElementById('theme-toggle');
+  const updateTheme=()=>{if(!theme)return;const light=body.classList.contains('light-theme');theme.innerHTML=light?'<i class="fa-solid fa-sun"></i>':'<i class="fa-solid fa-moon"></i>';theme.setAttribute('aria-label',light?'Switch to dark mode':'Switch to light mode');theme.title=theme.getAttribute('aria-label')};
+  updateTheme(); theme&&theme.addEventListener('click',()=>{body.classList.toggle('light-theme');localStorage.setItem('codexa-theme',body.classList.contains('light-theme')?'light':'dark');updateTheme()});
+  const nav=document.getElementById('navbar'),top=document.getElementById('scroll-top');
+  const scrollUI=()=>{nav&&nav.classList.toggle('scrolled',scrollY>40);top&&top.classList.toggle('show',scrollY>500)};addEventListener('scroll',scrollUI,{passive:true});scrollUI();
+  top&&top.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+  const ham=document.getElementById('hamburger'),menu=document.getElementById('mobile-menu'),close=document.getElementById('mobile-close');
+  const closeMenu=()=>{ham&&ham.classList.remove('open');menu&&menu.classList.remove('open');ham&&ham.setAttribute('aria-expanded','false');body.classList.remove('menu-open')};
+  ham&&ham.addEventListener('click',()=>{const open=ham.classList.toggle('open');menu&&menu.classList.toggle('open',open);ham.setAttribute('aria-expanded',String(open));body.classList.toggle('menu-open',open)});
+  close&&close.addEventListener('click',closeMenu);document.querySelectorAll('.mobile-link').forEach(a=>a.addEventListener('click',closeMenu));
+  document.querySelectorAll('img:not(.nav-logo-image):not(.loader-logo)').forEach(img=>{img.loading=img.loading||'lazy';img.decoding='async'});
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px'});document.querySelectorAll('[data-reveal]').forEach(e=>io.observe(e))}else document.querySelectorAll('[data-reveal]').forEach(e=>e.classList.add('is-visible'));
+})();
+</script></body>
+</html>
